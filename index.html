@@ -1,0 +1,333 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset= "utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Michias Ayalews Website</title>
+    </head>
+    
+    <body>
+      <h1>My goofy ahh teacher made me do this 💀</h1>
+
+    
+  <style>
+  @import url("https://fonts.googleapis.com/css?family=Hind:300,400&display=swap");
+  * {
+    box-sizing: border-box;
+  }
+  *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Hind', sans-serif;
+    background: #fff;
+    color: #4d5974;
+    display: -webkit-box;
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .container {
+    margin: 0 auto;
+    padding: 1rem;
+    width: 80rem;
+  }
+  
+  .accordion .accordion-item {
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .accordion .accordion-item button[aria-expanded='true'] {
+    border-bottom: 1px solid #03b5d2;
+  }
+  .accordion button {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 1em 0;
+    color: #7288a2;
+    font-size: 1.15rem;
+    font-weight: 400;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  .accordion button:hover, .accordion button:focus {
+    cursor: pointer;
+    color: #03b5d2;
+  }
+  .accordion button:hover::after, .accordion button:focus::after {
+    cursor: pointer;
+    color: #03b5d2;
+    border: 1px solid #03b5d2;
+  }
+  .accordion button .accordion-title {
+    padding: 1em 1.5em 1em 0;
+  }
+  .accordion button .icon {
+    display: inline-block;
+    position: absolute;
+    top: 18px;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid;
+    border-radius: 22px;
+  }
+  .accordion button .icon::before {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 9px;
+    left: 5px;
+    width: 10px;
+    height: 2px;
+    background: currentColor;
+  }
+  .accordion button .icon::after {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 5px;
+    left: 9px;
+    width: 2px;
+    height: 10px;
+    background: currentColor;
+  }
+  .accordion button[aria-expanded='true'] {
+    color: #03b5d2;
+  }
+  .accordion button[aria-expanded='true'] .icon::after {
+    width: 0;
+  }
+  .accordion button[aria-expanded='true'] + .accordion-content {
+    opacity: 1;
+    max-height: 9em;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+    will-change: opacity, max-height;
+  }
+  .accordion .accordion-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: opacity 200ms linear, max-height 200ms linear;
+    transition: opacity 200ms linear, max-height 200ms linear;
+    will-change: opacity, max-height;
+  }
+  .accordion .accordion-content p {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 2em 0;
+  }
+</style>
+<div class="container">
+<h2>Frequently Asked Questions</h2>
+<div class="accordion">
+<div class="accordion-item">
+<button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">What is your name?</span><span class="icon" aria-hidden="true"></span></button>
+<div class="accordion-content">
+<p>my name is michias ayalew NOT "mochia" or "mocha" or "mikybumhole" NONE OF THOSE. It is MICHIAS AYALEW. </p>
+</div>
+</div>
+<div class="accordion-item">
+<button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">Why do you hate brandon?</span><span class="icon" aria-hidden="true"></span></button>
+<div class="accordion-content">
+<p>That nigga started it 💀 I was just minding my business and this mans comes up to me and says "ayo mochia you ain' even buff lil man keep walking before I smack yo big ahh head."
+  Like bro what? But he too much of a bitch to say it to my face again now that I've been doing my breathing exercises and training everyday to defeat him on the next solar eclipse. </p>
+</div>
+</div>
+<div class="accordion-item">
+<button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">Is Andy 140 pounds or 160 pounds?</span><span class="icon" aria-hidden="true"></span></button>
+<div class="accordion-content">
+<p>I have no fucking idea I've been asking the same question.</p>
+</div>
+</div>
+<div class="accordion-item">
+<button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">Smash or Pass Emily?</span><span class="icon" aria-hidden="true"></span></button>
+<div class="accordion-content">
+<p>Smash.</p>
+</div>
+</div>
+<div class="accordion-item">
+<button id="accordion-button-5" aria-expanded="false"><span class="accordion-title">What would you do in the zombo apocalypse?</span><span class="icon" aria-hidden="true"></span></button>
+<div class="accordion-content">
+<p>Well, first of all, max, I would not die first. Second, I would just find a place to lie low during the day and go hunting at night. </p>
+  </div>
+  </div>
+  </div>
+  </div>
+  <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+  <script>
+  const items = document.querySelectorAll(".accordion button");
+  
+  function toggleAccordion() {
+    const itemToggle = this.getAttribute('aria-expanded');
+  
+    for (i = 0; i < items.length; i++) {
+      items[i].setAttribute('aria-expanded', 'false');
+    }
+    if (itemToggle == 'false') {
+      this.setAttribute('aria-expanded', 'true');
+    }
+  }
+  
+  items.forEach(item => item.addEventListener('click', toggleAccordion));
+</script><a target='_blank' href='http://google.com/' style='font-size: 8pt; text-decoration: none'>hai._.</a>
+
+
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins:700'>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  height: 100vh;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #cfb55f;
+}
+
+a {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 0.5em 2em;
+  cursor: pointer;
+  overflow: hidden;
+}
+.btn:before, .btn:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #252525;
+}
+.btn:before {
+  top: 0;
+}
+.btn:after {
+  bottom: 0;
+}
+.btn:hover > * > *:before, .btn:hover > * > *:after {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.btn:hover > * > * > *:before, .btn:hover > * > * > *:after {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.btn > *:before, .btn > *:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background-color: #252525;
+}
+.btn > *:before {
+  left: 0;
+}
+.btn > *:after {
+  right: 0;
+}
+.btn > * > *:before, .btn > * > *:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  z-index: 9;
+  height: 2px;
+  width: 100%;
+  background-color: #168dff;
+}
+.btn > * > *:before {
+  top: 0;
+  -webkit-transform: translate3d(-105%, 0, 0);
+          transform: translate3d(-105%, 0, 0);
+  -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn > * > *:after {
+  bottom: 0;
+  -webkit-transform: translate3d(105%, 0, 0);
+          transform: translate3d(105%, 0, 0);
+  -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn > * > * > *:before, .btn > * > * > *:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: 9;
+  height: 100%;
+  width: 2px;
+  background-color: #168dff;
+}
+.btn > * > * > *:before {
+  left: 0;
+  -webkit-transform: translate3d(0, 105%, 0);
+          transform: translate3d(0, 105%, 0);
+  -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn > * > * > *:after {
+  right: 0;
+  -webkit-transform: translate3d(0, -105%, 0);
+          transform: translate3d(0, -105%, 0);
+  -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+</style>
+
+
+<a class="btn">
+<span>
+<span>
+<span>watchu lookin at goofy💀</span>
+</span>
+</span>
+</a>
+
+
+<html>
+<head>
+<script language="javascript" type="text/javascript">
+alert("Why the fuck is you on my site 💀")
+</script>
+</head>
+</html>       
+
+
+
+
